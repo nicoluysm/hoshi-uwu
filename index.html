@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HoShiJang Bio Link - Pink Theme with My Melody</title>
+    <style>
+        /* ส่วนการตั้งค่าฟอนต์จากไฟล์ของคุณส่งมา */
+        /* หมายเหตุ: การดึงฟอนต์จาก Google Drive โดยตรงอาจแสดงผลไม่ได้ในบาง Browser 
+           หากฟอนต์ไม่เปลี่ยน แนะนำให้ฝากไฟล์ฟอนต์ไว้ที่ Host สำหรับทำเว็บโดยเฉพาะ */
+        @font-face {
+            font-family: 'CustomFont';
+            src: url('https://drive.google.com/uc?export=download&id=1GhDSstuu2np9M297MCDSZbYkW1kaj5DO') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        :root {
+            --main-pink: #FFB6C1;
+            --bg-pink: #FFF0F5;
+            --accent-pink: #FF69B4;
+            --text-color: #4A4A4A;
+            --border-color: #FFB6C1;
+        }
+
+        body {
+            /* เปลี่ยนจาก 'Mitr' เป็น 'CustomFont' ตามที่คุณต้องการ */
+            font-family: 'CustomFont', sans-serif;
+            background-color: var(--bg-pink);
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+            margin: 0;
+            color: var(--text-color);
+        }
+
+        .container {
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+        }
+
+        /* ส่วนหัวและโปรไฟล์ */
+        .profile-pic {
+            width: 100px;
+            height: 100px;
+            border: 3px solid var(--border-color);
+            border-radius: 50%;
+            margin: 0 auto 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #fff;
+            color: var(--accent-pink);
+            overflow: hidden; /* เพื่อให้รูปเป็นวงกลม */
+        }
+
+        .profile-pic img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* เพื่อให้รูปเต็มพื้นที่โดยไม่เสียสัดส่วน */
+        }
+
+        h1 { margin: 5px 0; font-size: 26px; color: var(--accent-pink); }
+        p.subtitle { font-size: 15px; margin-bottom: 25px; color: var(--text-color); }
+
+        /* ปุ่มและกล่องข้อความหลัก */
+        .box {
+            border: 2px solid var(--border-color);
+            border-radius: 15px;
+            padding: 12px;
+            margin-bottom: 12px;
+            background: #fff;
+            text-decoration: none;
+            color: var(--text-color);
+            display: block;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .box:hover {
+            background-color: var(--main-pink);
+            color: #fff;
+            transform: translateY(-2px);
+        }
+
+        .section-box {
+            border: 2px solid var(--border-color);
+            border-radius: 25px;
+            padding: 25px;
+            margin-top: 25px;
+            text-align: left;
+            background-color: rgba(255, 255, 255, 0.7);
+        }
+
+        .section-title {
+            text-align: center;
+            font-weight: bold;
+            font-size: 18px;
+            margin-bottom: 20px;
+            display: block;
+            color: var(--accent-pink);
+        }
+
+        /* ตารางราคา */
+        .price-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border: 1.5px solid var(--border-color);
+            border-radius: 12px;
+            padding: 10px 18px;
+            margin-bottom: 10px;
+            font-size: 14px;
+            background-color: #fff;
+        }
+
+        .price-tag {
+            background-color: var(--main-pink);
+            color: #fff;
+            padding: 3px 12px;
+            border-radius: 8px;
+            font-weight: bold;
+        }
+
+        /* ขั้นตอนการสั่งงาน */
+        .step {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 12px;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        .step-num {
+            border: 2px solid var(--border-color);
+            border-radius: 50%;
+            width: 26px;
+            height: 26px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 12px;
+            flex-shrink: 0;
+            font-weight: bold;
+            color: var(--accent-pink);
+            background-color: #fff;
+            margin-top: 2px;
+        }
+
+        .inner-link-box {
+            font-size: 13px;
+            margin-top: 18px;
+            border-style: dashed;
+            background-color: #fff;
+        }
+
+        /* ส่วนข้อตกลง */
+        .terms-title {
+            text-align: left;
+            font-size: 15px;
+            color: var(--accent-pink);
+            margin-bottom: 10px;
+        }
+
+        .terms {
+            font-size: 13px;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .terms li {
+            position: relative;
+            padding-left: 15px;
+            margin-bottom: 6px;
+        }
+
+        .terms li::before {
+            content: "•";
+            color: var(--accent-pink);
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+
+        /* ปุ่มติดต่อด้านล่างสุด */
+        .footer-btn {
+            background-color: var(--accent-pink);
+            color: #fff;
+            margin-top: 25px;
+            font-weight: bold;
+            font-size: 16px;
+            border: none;
+        }
+
+        .footer-btn:hover {
+            background-color: #e05599;
+        }
+
+        @media (max-width: 350px) {
+            .container { padding: 10px; }
+            h1 { font-size: 22px; }
+            .section-box { padding: 15px; }
+            .price-row { padding: 8px 10px; font-size: 13px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="profile-pic">
+        <img src="https://i.imgur.com/8Q9j7mZ.png" alt="My Melody Profile">
+    </div>
+    <h1>hoshijang</h1>
+    <p class="subtitle">โฮชิรับทำป้าย ราคาเริ่มต้น 35 บาท</p>
+
+    <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 8px;">
+        <span class="box" style="border-radius: 12px; padding: 6px 18px; flex: 1; min-width: 100px;">แนวเรียบ</span>
+        <span class="box" style="border-radius: 12px; padding: 6px 18px; flex: 1; min-width: 100px;">เฮดน่ารัก</span>
+    </div>
+    <div class="box" style="border-radius: 12px;">แนวเมฆนุ่มบุ๊กปิ๊ก</div>
+    <div class="box" style="border-radius: 12px;">ป้ายเติมเกมบัดดี้คุณปุน</div>
+
+    <a href="https://docs.google.com/spreadsheets/d/1-F5ebYJ4TL--270P6ia7PvdrVoIKqqaXK3iKYPVsxZw/edit?usp=drivesdk" class="box" style="margin-top: 25px; border-width: 3px; border-style: dashed;">เช็คคิวงานป้าย</a>
+
+    <div class="section-box">
+        <span class="section-title">💭เรทราคางานป้าย</span>
+        <div class="price-row"><span>แนวเรียบ</span><span class="price-tag">เริ่มต้น 35 บาท</span></div>
+        <div class="price-row"><span>แนวเฮดน่ารัก</span><span class="price-tag">เริ่มต้น 40 บาท</span></div>
+        <div class="price-row"><span>ป้ายเติมเกมบัดดี้คุณปุน</span><span class="price-tag">เริ่มต้น 45 บาท</span></div>
+        <div class="price-row"><span>แนวเมฆนุ่มบุ๊กปิ๊ก</span><span class="price-tag">เริ่มต้น 79 บาท</span></div>
+        <div class="price-row" style="color: var(--accent-pink); font-weight: bold;"><span>งานเร่ง</span><span class="price-tag" style="background-color: var(--accent-pink);">*2 ของราคางาน</span></div>
+    </div>
+
+    <div class="section-box">
+        <span class="section-title">✍🏻ขั้นตอนการสั่งงาน</span>
+        <div class="step"><div class="step-num">1</div> ดูตัวอย่างงาน จากนั้นบอกแนวที่ต้องการสั่งทำ</div>
+        <div class="step"><div class="step-num">2</div> เลือกของทำป้ายแล้วแคปส่งให้ทางร้าน</div>
+        <div class="step"><div class="step-num">3</div> บรีฟรายละเอียดข้อความต่าง ๆ</div>
+        <div class="step"><div class="step-num">4</div> ทางร้านจะคิดยอดให้ จากนั้นลูกค้าชำระเงิน</div>
+        
+        <a href="https://drive.google.com/drive/folders/1ua7qBRaUFzEYWzDE3r-s5ZuWvX-eiKz6" class="box inner-link-box">ลิงก์รวมตัวอย่าง & เลือกของตกแต่ง บล็อก ตูน</a>
+    </div>
+
+    <div class="section-box" style="padding-bottom: 20px;">
+        <div class="terms-title">📌เกี่ยวกับทางร้านและข้อตกลงต่าง ๆ</div>
+        <ul class="terms">
+            <li>ไม่มีคิวรองาน 4-8 ชั่วโมง / ติดคิวรองาน 1-3 วัน</li>
+            <li>หากโอนแล้วต้องการยกเลิกงาน คืนเงิน 50% เท่านั้น</li>
+            <li>แก้หลังส่งงานบวกเพิ่มจุดละ 10-20 บาท ตามรายละเอียด</li>
+        </ul>
+    </div>
+
+    <a href="https://line.me/ti/p/AqOPPgKPQ7" class="box footer-btn">สั่งงาน / สอบถามทาง LINE 📱</a>
+</div>
+
+</body>
+</html>
